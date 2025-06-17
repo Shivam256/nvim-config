@@ -50,3 +50,12 @@ nnoremap <leader>e :Explore<CR>
 
 " === Git integration (if gitgutter plugin is later added) ===
 " let g:gitgutter_enabled = 1
+
+
+
+" === NERDTree Settings ===
+map <C-e> :NERDTreeToggle<CR>        " Toggle NERDTree with Ctrl+E
+autocmd VimEnter * NERDTree          " Open NERDTree when Vim starts
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
